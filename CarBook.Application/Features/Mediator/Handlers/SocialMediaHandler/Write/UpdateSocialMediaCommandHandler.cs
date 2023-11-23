@@ -5,7 +5,7 @@ using MediatR;
 
 namespace CarBook.Application.Features.Mediator.Handlers.SocialMediaHandler.Write
 {
-    internal class UpdateSocialMediaCommandHandler : IRequestHandler<UpdateSocialMediaCommand>
+    public class UpdateSocialMediaCommandHandler : IRequestHandler<UpdateSocialMediaCommand>
     {
         private readonly IRepository<SocialMedia> _repository;
 

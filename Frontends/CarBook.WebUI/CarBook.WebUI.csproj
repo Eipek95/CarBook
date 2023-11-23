@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewComponents\BlogViewComponents\" />
+    <Folder Include="ViewComponents\CommentViewComponents\" />
+    <Folder Include="ViewComponents\DefaultViewComponents\" />
+    <Folder Include="ViewComponents\FooterAddressComponents\" />
+    <Folder Include="ViewComponents\ServiceViewComponents\" />
+    <Folder Include="ViewComponents\TestimonialViewComponents\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarBook.Dto\CarBook.Dto.csproj" />
+  </ItemGroup>
+
+</Project>
