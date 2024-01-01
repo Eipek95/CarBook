@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewComponents\CommentViewComponents\" />
     <Folder Include="ViewComponents\TestimonialViewComponents\" />
   </ItemGroup>
 
