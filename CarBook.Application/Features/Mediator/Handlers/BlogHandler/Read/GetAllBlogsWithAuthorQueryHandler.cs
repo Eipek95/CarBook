@@ -28,6 +28,8 @@ namespace CarBook.Application.Features.Mediator.Handlers.BlogHandler.Read
                 Title = x.Title,
                 AuthorName = x.Author.Name,
                 Description = x.Description,
+                AuthorImageUrl=x.Author.ImageUrl,
+                AuthorDescription = x.Author.Description,
 
             }).ToList();
         }

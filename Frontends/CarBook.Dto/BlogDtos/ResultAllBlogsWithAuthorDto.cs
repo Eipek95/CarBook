@@ -16,5 +16,8 @@
         public string authorName { get; set; }
 
         public string description { get; set; }
+
+        public string AuthorImageUrl { get; set; }
+        public string AuthorDescription { get; set; }
     }
 }
