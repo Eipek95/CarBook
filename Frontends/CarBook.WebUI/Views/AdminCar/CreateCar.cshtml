@@ -1,0 +1,102 @@
+﻿@model CreateCarDto
+@{
+    ViewData["Title"] = "CreateCar";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+
+<div class="page-content">
+    <div class="container-fluid">
+
+
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yeni Araba Giriş</h4>
+                        <p class="card-subtitle mb-4">
+                            Araç ile ilgili temel bilgileri eksiksiz doldurmanız önemlidir.Veri girişlerinden sonra kaydet buttonuna tıklayarak işlemi tamamlayabilirsiniz
+                        </p>
+                        <form class="needs-validation" novalidate method="post">
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="brand">Marka</label>
+                                    @Html.DropDownListFor(x => x.BrandId, (List<SelectListItem>)ViewBag.BrandValues, new { @class = "form-control" })
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="model">Model</label>
+                                    <input type="text" class="form-control" id="model"  placeholder="Model Bilgisini Giriniz" asp-for="Model" required>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="coverImage">Kapak Fotoğrafı</label>
+                                    <input type="text" class="form-control" id="coverImage" placeholder="Kapak Fotoğraf Linki Giriniz" asp-for="CoverImageUrl" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="km">Kilometre</label>
+                                    <input type="number" class="form-control" id="km" min="1" placeholder="Km Bilgisi Giriniz" asp-for="Km" required>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="transmission">Vites Türü</label>
+                                    <input type="text" class="form-control" id="transmission" placeholder="Vites Türü Giriniz" asp-for="Transmission" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="seats">Koltuk Sayısı</label>
+                                    <input type="number" class="form-control" id="seats" min="1" placeholder="Koltuk Sayısı Giriniz" asp-for="Seats" required>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="luggage">Bagaj Sayısı</label>
+                                    <input type="number" class="form-control" id="luggage" min="0" placeholder="Bagaj Sayısı Giriniz" asp-for="Luggage" required>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="fuel">Yakıt Türü</label>
+                                    <input type="text" class="form-control" id="fuel" placeholder="Yakıt Türü Giriniz" asp-for="Fuel" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="bigImageUrl">Büyük Kapak Fotoğrafı</label>
+                                    <input type="text" class="form-control" id="bigImageUrl" placeholder="Araç Detay Sayfası Kapak Fotoğraf Linki Giriniz" asp-for="BigImageUrl" required>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary waves-effect waves-light" type="submit">Aracı Kaydet</button>
+                            </div>
+                            
+                        </form>
+
+                    </div> <!-- end card-body-->
+                </div> <!-- end card -->
+            </div> <!-- end col-->
+        </div>
+
+
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/Admin/vertical/assets/pages/validation-demo.js"></script>
+
+
+    <style>
+        .was-validated .form-control:valid, .form-control.is-valid {
+            border-color: #2ac14e;
+            padding-right: calc(1.5em + .75rem);
+            background-position: center right calc(1.0em + .1875rem);
+            background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+        }
+    </style>
+}
