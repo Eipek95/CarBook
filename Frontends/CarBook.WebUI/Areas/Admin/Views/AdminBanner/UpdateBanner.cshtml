@@ -1,0 +1,70 @@
+﻿@model UpdateBannerDto
+@{
+    ViewData["Title"] = "UpdateBanner";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yeni Banner Giriş</h4>
+                        <p class="card-subtitle mb-4">
+                            Ana sayfanın banner alanında bulunan bilgileri aşağıdan düzenleyebilirsiniz.
+                        </p>
+                        <form class="needs-validation" novalidate method="post">
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3" hidden>
+                                    <label for="bannerId">Id</label>
+                                    <input type="number" class="form-control" id="bannerId" min="1" asp-for="BannerID" required>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="title">Başlık</label>
+                                    <input type="text" class="form-control" id="title" placeholder="Başlığı Giriniz" asp-for="Title" required>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="description">Açıklama</label>
+                                    <textarea class="form-control" id="description" placeholder="Lütfen Açıklama Giriniz" asp-for="Description" cols="3" rows="5" required></textarea>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="vdescription">Video Açıklama</label>
+                                    <textarea class="form-control" id="vdescription" placeholder="Lütfen Video için Bir Açıklama Giriniz" asp-for="VideoDescription" cols="3" rows="5" required></textarea>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="vUrl">Video URL</label>
+                                    <input type="text" class="form-control" id="vUrl" placeholder="Lütfen Video İçin Bir Link Giriniz" asp-for="VideoUrl" required>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary waves-effect waves-light" type="submit">Banner Kaydet</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/Admin/vertical/assets/pages/validation-demo.js"></script>
+
+}
+
+                            

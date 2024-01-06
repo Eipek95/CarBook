@@ -1,0 +1,49 @@
+﻿@model UpdateBrandDto
+@{
+    ViewData["Title"] = "UpdateBrand";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yeni Özellik Giriş</h4>
+                        <p class="card-subtitle mb-4">
+                            Araç ile ilgili temel özellik bilgilerini eksiksiz doldurmanız önemlidir.Veri girişinden sonra kaydet buttonuna tıklayarak işlemi tamamlayabilirsiniz
+                        </p>
+                        <form class="needs-validation" novalidate method="post">
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3" hidden>
+                                    <label for="brandId">Id</label>
+                                    <input type="number" class="form-control" id="brandId" min="1" asp-for="brandID" required>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="brand">Marka</label>
+                                    <input type="text" class="form-control" id="brand" placeholder="Marka Bilgisini Giriniz" asp-for="name" required>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary waves-effect waves-light" type="submit">Özellik Kaydet</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/Admin/vertical/assets/pages/validation-demo.js"></script>
+
+}
+
+

@@ -1,0 +1,62 @@
+﻿@model UpdateAboutDto
+@{
+    ViewData["Title"] = "UpdateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Hakkımızda Sayfası Düzenleme</h4>
+                        <p class="card-subtitle mb-4">
+                            Ana sayfanın hakkımızda alanında bulunan bilgileri aşağıdan düzenleyebilirsiniz.
+                        </p>
+                        <form class="needs-validation" novalidate method="post">
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3" hidden>
+                                    <label for="aboutId">Id</label>
+                                    <input type="number" class="form-control" id="aboutId" min="1" asp-for="aboutID" required>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="title">Başlık</label>
+                                    <input type="text" class="form-control" id="title" placeholder="Başlığı Giriniz" asp-for="title" required>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="description">Açıklama</label>
+                                    <textarea class="form-control" id="description" placeholder="Lütfen Açıklama Giriniz" asp-for="description" cols="3" rows="5" required></textarea>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="iUrl">Görsel URL</label>
+                                    <input type="text" class="form-control" id="iUrl" placeholder="Lütfen Hakkımızda Kapak Fotoğrafı İçin Bir Link Giriniz" asp-for="imageUrl" required>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary waves-effect waves-light" type="submit">Kaydet</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/Admin/vertical/assets/pages/validation-demo.js"></script>
+
+}
+
+
