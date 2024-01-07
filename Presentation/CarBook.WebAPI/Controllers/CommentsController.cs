@@ -35,7 +35,7 @@ namespace CarBook.WebAPI.Controllers
             {
                 return NotFound();
             }
-            _comments.Create(comments);
+            _comments.Remote(comments);
             return Ok("Yorum Başarıyla Silindi");
         }
         [HttpPut]
@@ -53,6 +53,17 @@ namespace CarBook.WebAPI.Controllers
         public IActionResult GetComment(int id)
         {
             var comment = _comments.GetById(id);
+            if (comment == null)
+            {
+                return NotFound();
+            }
+            return Ok(comment);
+        }
+
+        [HttpGet("CommentListByBlog")]
+        public IActionResult CommentListByBlog(int id)
+        {
+            var comment = _comments.GetCommentsByBlogId(id);
             if (comment == null)
             {
                 return NotFound();

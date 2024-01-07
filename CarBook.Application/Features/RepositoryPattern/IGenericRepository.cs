@@ -7,5 +7,6 @@
         void Update(T entity);
         void Remote(T entity);
         T GetById(int id);
+        List<T> GetCommentsByBlogId(int id);
     }
 }

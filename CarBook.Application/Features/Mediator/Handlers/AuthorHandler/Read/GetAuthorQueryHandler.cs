@@ -23,6 +23,8 @@ namespace CarBook.Application.Features.Mediator.Handlers.AuthorHandler.Read
             {
                 AuthorID = x.AuthorID,
                 Name = x.Name,
+                Description = x.Description,
+                ImageUrl = x.ImageUrl,
             }).ToList();
         }
     }

@@ -36,6 +36,11 @@ namespace CarBook.Persistance.Repositories.CommentRepositories
             return _carBookContext.Comments.Find(id);
         }
 
+        public List<Comment> GetCommentsByBlogId(int id)
+        {
+            return _carBookContext.Set<Comment>().Where(x => x.BlogId == id).ToList();
+        }
+
         public void Remote(Comment entity)
         {
             _carBookContext.Comments.Remove(entity);
