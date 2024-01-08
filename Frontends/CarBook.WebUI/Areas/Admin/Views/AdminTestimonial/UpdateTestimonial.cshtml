@@ -1,0 +1,75 @@
+﻿@model UpdateTestimonialDto
+@{
+    ViewData["Title"] = "UpdateTestimonial";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Referans Düzenleme</h4>
+                        <p class="card-subtitle mb-4">
+                            Ana sayfanın referans alanında bulunan bilgileri aşağıdan düzenleyebilirsiniz.
+                        </p>
+                        <form class="needs-validation" novalidate method="post">
+                            <div class="col-md-12 mb-3" hidden>
+                                <label for="testimonialID">Id</label>
+                                <input type="number" class="form-control" id="testimonialID" min="1" asp-for="TestimonialID" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3">
+                                    <label for="comFullName">Yorum Yapan Kişi</label>
+                                    <input type="text" class="form-control" id="comFullName" placeholder="Yorum Yapan Kişi Bilgisi Giriniz" asp-for="Name" required>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3">
+                                    <label for="cTitle">Mesleği</label>
+                                    <input type="text" class="form-control" id="cTitle" placeholder="Mesleği Giriniz" asp-for="Title" required>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3">
+                                    <label for="comment">Yorum</label>
+                                    <textarea class="form-control" id="comment" placeholder="Lütfen Yorum Giriniz" asp-for="Comment" cols="3" rows="5" required></textarea>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3">
+                                    <label for="cpUrl">Yorum Yapan Profil Url</label>
+                                    <input type="text" class="form-control" id="cpUrl" placeholder="Yorum Yapan Kişi İçin Profil Url Giriniz" asp-for="ImageUrl" required>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="text-center">
+                                <button class="btn btn-primary waves-effect waves-light" type="submit">Kaydet</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/Admin/vertical/assets/pages/validation-demo.js"></script>
+
+}
+

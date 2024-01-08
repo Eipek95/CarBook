@@ -1,0 +1,62 @@
+﻿@model CreateServiceDto
+@{
+    ViewData["Title"] = "CreateService";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Servis Bilgisi Kaydetme</h4>
+                        <p class="card-subtitle mb-4">
+                            Ana sayfanın servis alanında bulunan bilgileri aşağıdan düzenleyebilirsiniz.
+                        </p>
+                        <form class="needs-validation" novalidate method="post">
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3">
+                                    <label for="serTitle">Başlık</label>
+                                    <input type="text" class="form-control" id="serTitle" placeholder="Servis Başlığı Giriniz" asp-for="Title" required>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3">
+                                    <label for="description">Açıklama</label>
+                                    <textarea class="form-control" id="description" placeholder="Lütfen Açıklama Giriniz" asp-for="Description" cols="3" rows="5" required></textarea>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3">
+                                    <label for="iUrl">Servis IconUrl</label>
+                                    <input type="text" class="form-control" id="iUrl" placeholder="Servis IconUrl Giriniz" asp-for="IconUrl" required>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="text-center">
+                                <button class="btn btn-primary waves-effect waves-light" type="submit">Kaydet</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/Admin/vertical/assets/pages/validation-demo.js"></script>
+
+}
+

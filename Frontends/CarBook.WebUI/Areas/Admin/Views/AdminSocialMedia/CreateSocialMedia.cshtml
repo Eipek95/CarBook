@@ -1,0 +1,63 @@
+﻿@model CreateSocialMediaDto
+@{
+    ViewData["Title"] = "CreateSocialMedia";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Sosyal Medya Kaydetme</h4>
+                        <p class="card-subtitle mb-4">
+                            Ana sayfanın sosyal medya alanında bulunan bilgileri aşağıdan düzenleyebilirsiniz.
+                        </p>
+                        <form class="needs-validation" novalidate method="post">
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3">
+                                    <label for="socTitle">Sosyal Medya Başlığı</label>
+                                    <input type="text" class="form-control" id="socTitle" placeholder="Sosyal Medya Başlığı Giriniz" asp-for="Name" required>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3">
+                                    <label for="sUrl">Url</label>
+                                    <input type="text" class="form-control" id="sUrl" placeholder="Sosyal Medya Url Giriniz" asp-for="Url" required>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3">
+                                    <label for="iUrl">Sosyal Medya Icon</label>
+                                    <input type="text" class="form-control" id="iUrl" placeholder="Sosyal Medya Ikon Giriniz" asp-for="Icon" required>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="text-center">
+                                <button class="btn btn-primary waves-effect waves-light" type="submit">Kaydet</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/Admin/vertical/assets/pages/validation-demo.js"></script>
+
+}
+
+

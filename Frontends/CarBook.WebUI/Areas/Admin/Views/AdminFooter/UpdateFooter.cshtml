@@ -1,0 +1,67 @@
+﻿@model UpdateFooterAddressDto
+@{
+    ViewData["Title"] = "UpdateFooter";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Footer Bilgisi Düzenleme</h4>
+                        <p class="card-subtitle mb-4">
+                            Ana sayfanın footer alanında bulunan bilgileri aşağıdan düzenleyebilirsiniz.
+                        </p>
+                        <form class="needs-validation" novalidate method="post">
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3" hidden>
+                                    <label for="footerId">Id</label>
+                                    <input type="number" class="form-control" id="footerId" min="1" asp-for="FooterAddressID" required>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="description">Açıklama</label>
+                                    <textarea class="form-control" id="description" placeholder="Lütfen Açıklama Giriniz" asp-for="Description" cols="3" rows="5" required></textarea>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="address">Adres</label>
+                                    <textarea class="form-control" id="address" placeholder="Lütfen Adres Giriniz" asp-for="Address" cols="3" rows="5" required></textarea>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Email Giriniz" asp-for="Email" required>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="phone">Telefon</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="Telefon Numarası Giriniz" asp-for="Phone" required>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary waves-effect waves-light" type="submit">Kaydet</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/Admin/vertical/assets/pages/validation-demo.js"></script>
+
+}

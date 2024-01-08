@@ -1,0 +1,48 @@
+﻿@model UpdateLocationDto
+@{
+    ViewData["Title"] = "UpdateLocation";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Lokasyon Bilgisi Düzenleme</h4>
+                        <p class="card-subtitle mb-4">
+                            Ana sayfanın lokasyon alanında bulunan bilgileri aşağıdan düzenleyebilirsiniz.
+                        </p>
+                        <form class="needs-validation" novalidate method="post">
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3" hidden>
+                                    <label for="locationId">Id</label>
+                                    <input type="number" class="form-control" id="locationId" min="1" asp-for="LocationID" required>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="locName">Lokasyon</label>
+                                    <input type="text" class="form-control" id="locName" placeholder="Lokasyon Giriniz" asp-for="Name" required>
+                                    <div class="invalid-tooltip">
+                                        Lütfen Bu Alanı Doldurun
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary waves-effect waves-light" type="submit">Kaydet</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/Admin/vertical/assets/pages/validation-demo.js"></script>
+
+}
+
+
