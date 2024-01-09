@@ -29,6 +29,9 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
             ViewBag.carCountByKmSmallerThen1000 = await GetValueAsync("GetCarCountByKmSmallerThen1000");
             ViewBag.carCountByFuelElectric = await GetValueAsync("GetCarCountByFuelElectric");
             ViewBag.carBrandAndModelByRentPriceDailyMax = await GetValueAsync("GetCarBrandAndModelByRentPriceDailyMax");
+            ViewBag.carBrandAndModelByRentPriceDailyMin = await GetValueAsync("GetCarBrandAndModelByRentPriceDailyMin");
+            ViewBag.brandNameByMaxCar = await GetValueAsync("GetBrandNameByMaxCar");
+            ViewBag.blogTitleByMaxBlogComment = await GetValueAsync("GetBlogTitleByMaxBlogComment");
 
             (ViewBag.gasolineCount, ViewBag.dieselCount) = await Get2ValueAsync("GetCarCountByFuelGasolineOrDiesel");
             return View();
@@ -55,6 +58,9 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
                 if (url == "GetCarCountByKmSmallerThen1000") return Convert.ToInt32(values.carCountByKmSmallerThen1000);
                 if (url == "GetCarCountByFuelElectric") return Convert.ToInt32(values.carCountByFuelElectric);
                 if (url == "GetCarBrandAndModelByRentPriceDailyMax") return values.carBrandAndModelByRentPriceDailyMax;
+                if (url == "GetCarBrandAndModelByRentPriceDailyMin") return values.carBrandAndModelByRentPriceDailyMin;
+                if (url == "GetBrandNameByMaxCar") return values.brandNameByMaxCar;
+                if (url == "GetBlogTitleByMaxBlogComment") return values.blogTitleByMaxBlogComment;
 
             }
 

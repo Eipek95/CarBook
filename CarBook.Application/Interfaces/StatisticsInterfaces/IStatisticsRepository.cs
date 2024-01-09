@@ -18,5 +18,6 @@
         int GetCarCountByFuelElectric();
         string GetCarBrandAndModelByRentPriceDailyMax();
         string GetCarBrandAndModelByRentPriceDailyMin();
+
     }
 }

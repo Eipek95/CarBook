@@ -16,7 +16,10 @@
         public int gasolineCount { get; set; }
         public int dieselCount { get; set; }
         public int carCountByFuelElectric { get; set; }
-        public string carBrandAndModelByRentPriceDailyMax { get; set; }
+        public string? carBrandAndModelByRentPriceDailyMax { get; set; }
+        public string? carBrandAndModelByRentPriceDailyMin { get; set; }
+        public string? brandNameByMaxCar { get; set; }
+        public string? blogTitleByMaxBlogComment { get; set; }
     }
 }
 
