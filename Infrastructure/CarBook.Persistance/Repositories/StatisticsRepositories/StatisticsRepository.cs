@@ -1,5 +1,6 @@
 ﻿using CarBook.Application.Interfaces.StatisticsInterfaces;
 using CarBook.Persistance.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace CarBook.Persistance.Repositories.StatisticsRepositories
 {
@@ -52,7 +53,12 @@ namespace CarBook.Persistance.Repositories.StatisticsRepositories
 
         public string GetCarBrandAndModelByRentPriceDailyMax()
         {
-            throw new NotImplementedException();
+            //select*from carpricings where amount=(select max(amount) from carpricings where pricingid=3)
+            int pricingId = _context.Pricings.Where(x => x.Name.ToLower() == "Günlük".ToLower()).Select(x => x.PricingID).FirstOrDefault();
+            decimal price = _context.CarPricings.Where(x => x.PricingID == pricingId).Max(x => x.Amount);
+            int carId = _context.CarPricings.Where(x => x.Amount == price).Select(y => y.CarID).FirstOrDefault();
+            string brandModel = _context.Cars.Where(x => x.CarId == carId).Include(y => y.Brand).Select(z => z.Brand.Name + " " + z.Model).FirstOrDefault();
+            return brandModel;
         }
 
         public string GetCarBrandAndModelByRentPriceDailyMin()
@@ -64,7 +70,13 @@ namespace CarBook.Persistance.Repositories.StatisticsRepositories
 
         public int GetCarCountByFuelElectric() => _context.Cars.Where(x => x.Fuel == "Elektrik").Count();
 
-        public int GetCarCountByFuelGasolineOrDiesel() => _context.Cars.Where(x => x.Fuel == "Benzin" || x.Fuel == "Dizel").Count();
+        public (int, int) GetCarCountByFuelGasolineOrDiesel()
+        {
+            var fuelGasolineCount = _context.Cars.Where(x => x.Fuel == "Benzin").Count();
+            var fuelDieselCount = _context.Cars.Where(x => x.Fuel == "Dizel").Count();
+
+            return (fuelDieselCount, fuelGasolineCount);
+        }
 
         public int GetCarCountByKmSmallerThen1000() => _context.Cars.Where(x => x.Km <= 1000).Count();
 

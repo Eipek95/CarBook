@@ -14,7 +14,7 @@
         string GetBrandNameByMaxCar();
         string GetBlogTitleByMaxBlogComment();
         int GetCarCountByKmSmallerThen1000();
-        int GetCarCountByFuelGasolineOrDiesel();
+        (int, int) GetCarCountByFuelGasolineOrDiesel();
         int GetCarCountByFuelElectric();
         string GetCarBrandAndModelByRentPriceDailyMax();
         string GetCarBrandAndModelByRentPriceDailyMin();

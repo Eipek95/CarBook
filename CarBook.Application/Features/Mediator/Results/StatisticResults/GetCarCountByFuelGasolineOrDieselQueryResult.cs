@@ -2,6 +2,6 @@
 {
     public class GetCarCountByFuelGasolineOrDieselQueryResult
     {
-        public int CarCountByFuelGasolineOrDiesel { get; set; }
+        public (int, int) CarCountByFuelGasolineOrDiesel { get; set; }
     }
 }
