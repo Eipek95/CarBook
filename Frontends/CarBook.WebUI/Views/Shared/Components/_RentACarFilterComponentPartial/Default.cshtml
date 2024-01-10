@@ -1,15 +1,15 @@
-﻿
+﻿@model ResultLocationDto
 <section class="ftco-section ftco-no-pt bg-light">
     <div class="container">
         <div class="row no-gutters">
             <div class="col-md-12	featured-top">
                 <div class="row no-gutters">
                     <div class="col-md-4 d-flex align-items-center">
-                        <form action="#" class="request-form ftco-animate bg-primary">
+                        <form asp-action="Index" asp-controller="RentACarList" method="get" class="request-form ftco-animate bg-primary">
                             <h2>Şimdi Aracınızı Kiralayın</h2>
                             <div class="form-group">
                                 <label for="" class="label">Alınacak Lokasyon</label>
-                                <input type="text" class="form-control" placeholder="Şehir, Havaalanı, İstasyon vb.">
+                                @Html.DropDownListFor(x => x.LocationID, (List<SelectListItem>)ViewBag.Values,new {@class="form-control"})
                             </div>
                             <div class="d-flex">
                                 <div class="form-group mr-2">
@@ -29,7 +29,7 @@
 
                                 <div class="form-group ml-2">
                                     <label for="" class="label">İade Saati</label>
-                                    <input type="text" class="form-control" id="time_pick" placeholder="Time">
+                                    <input type="text" class="form-control" id="time_pick"  placeholder="Time">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -74,3 +74,11 @@
         </div>
     </div>
 </section>
+
+
+<style>
+    .request-form .form-control {
+        background: #1089FF !important;
+        color:white;
+    }
+</style>
