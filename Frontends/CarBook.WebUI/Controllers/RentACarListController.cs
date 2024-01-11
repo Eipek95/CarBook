@@ -1,8 +1,6 @@
-﻿using CarBook.Dto.LocationDtos;
-using CarBook.Dto.RentACarDtos;
+﻿using CarBook.Dto.RentACarDtos;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Text;
 
 namespace CarBook.WebUI.Controllers
 {
@@ -16,20 +14,15 @@ namespace CarBook.WebUI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index(ResultLocationDto dto)
+        public async Task<IActionResult> Index(int locationId)
         {
-
-            FilterRentACarDto filterRentACarDto = new FilterRentACarDto();
-            filterRentACarDto.locationID = dto.LocationID;
-            filterRentACarDto.avaliable = true;
-
             var client = _httpClientFactory.CreateClient();
-            var jsonData = JsonConvert.SerializeObject(filterRentACarDto);
-            StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PostAsync("https://localhost:7177/api/RentACar", content);
+            var responseMessage = await client.GetAsync($"https://localhost:7177/api/RentACar?LocationID={locationId}&Avaliable={true}");
             if (responseMessage.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index");
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<FilterRentACarDto>>(jsonData);
+                return View(values);
             }
             return View();
         }

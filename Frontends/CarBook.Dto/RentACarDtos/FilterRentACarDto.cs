@@ -2,7 +2,7 @@
 {
     public class FilterRentACarDto
     {
-        public int locationID { get; set; }
-        public bool avaliable { get; set; }
+        public int carID { get; set; }
+
     }
 }
