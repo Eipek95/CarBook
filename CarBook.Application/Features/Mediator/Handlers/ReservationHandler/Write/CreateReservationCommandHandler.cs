@@ -30,7 +30,7 @@ namespace CarBook.Application.Features.Mediator.Handlers.ReservationHandler.Writ
                 Phone = request.Phone,
                 Surname = request.Surname,
                 Name = request.Name,
-
+                Status = "Rezerve alındıf",
             });
         }
     }

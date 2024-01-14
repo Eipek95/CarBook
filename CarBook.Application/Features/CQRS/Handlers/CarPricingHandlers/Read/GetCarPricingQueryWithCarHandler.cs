@@ -23,7 +23,8 @@ namespace CarBook.Application.Features.CQRS.Handlers.CarPricingHandlers.Read
                 CarPricingID = x.CarPricingID,
                 Brand = x.Car.Brand.Name,
                 CoverImageUrl = x.Car.CoverImageUrl,
-                Model = x.Car.Model
+                Model = x.Car.Model,
+                CarID = x.CarID
             }).ToList();
         }
     }
